@@ -5,8 +5,6 @@
         <div class="card-body">
             <h1 class="mt-3">Welcome, {{ $user->name }}!</h1>
             <p class="mt-3"><b>Email:</b> {{ $user->email }}</p>
-            <p class="mt-3"><b>Address:</b> {{ $user->address }}</p>
-            <p><b>Phone:</b> {{ $user->phone }}</p>
             <a href="{{ route('edit.user', $user->id) }}" class="btn btn-primary">Edit Profile</a>
 
         </div>

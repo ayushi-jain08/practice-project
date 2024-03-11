@@ -26,27 +26,6 @@
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control @error('phone')
-            is-invalid
-         @enderror"
-                    value="{{ $user->phone }}" id="phone" aria-describedby="phoneHelp" name="phone">
-                @error('phone')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control @error('address')
-            is-invalid
-         @enderror"
-                    value="{{ $user->address }}" id="address" aria-describedby="addressHelp" name="address">
-                @error('address')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-
             <button type="submit" class="btn btn-primary mb-3">Submit</button>
             <p><b style="color: rgb(8, 0, 255);">Already have an account? </b><a href="{{ route('login.user') }}">Login</a>
             </p>

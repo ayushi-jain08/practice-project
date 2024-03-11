@@ -16,47 +16,35 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control @error('name')
+                <input type="text"
+                    class="form-control @error('name')
                 is-invalid
-             @enderror" id="name" aria-describedby="nameHelp" name="name">
+             @enderror" id="name"
+                    aria-describedby="nameHelp" name="name">
                 @error('name')
-                <span class="text-danger">{{ $message }}</span>
+                    <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control @error('email')
+                <input type="email"
+                    class="form-control @error('email')
                 is-invalid
-             @enderror" id="email" aria-describedby="emailHelp" name="email">
+             @enderror"
+                    id="email" aria-describedby="emailHelp" name="email">
                 @error('email')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control @error('phone')
-                is-invalid
-             @enderror" id="phone" aria-describedby="phoneHelp" name="phone">
-                @error('phone')
-                <span class="text-danger">{{ $message }}</span>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control @error('address')
-                is-invalid
-             @enderror" id="address" aria-describedby="addressHelp" name="address">
-                @error('address')
-                <span class="text-danger">{{ $message }}</span>
+                    <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control @error('password')
+                <input type="password"
+                    class="form-control @error('password')
                 is-invalid
-             @enderror" id="password" name="password">
+             @enderror"
+                    id="password" name="password">
                 @error('password')
-                <span class="text-danger">{{ $message }}</span>
+                    <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary mb-3">Submit</button>
@@ -65,8 +53,8 @@
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

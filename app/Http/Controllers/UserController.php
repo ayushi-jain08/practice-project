@@ -16,18 +16,14 @@ class UserController extends Controller
     }
     public function RegisterStore(Request $req){
         $req->validate([
-            'name' => 'required',
-            'email' => 'required|email' ,
-            'phone' => 'required|numeric',
-            'address' => 'required' ,
-            'password' => 'required' ,
+            'name' => 'required|regex:/^[A-Za-z\s]+$/',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
         ]);
 
         $user = new User();
         $user->name = $req->name;
         $user->email = $req->email;
-        $user->phone = $req->phone; 
-        $user->address = $req->address;
         $user->password = Hash::make($req->password);
         $user->save();
 
@@ -56,8 +52,6 @@ class UserController extends Controller
         $req->validate([
             'name' => 'required',
             'email' => 'required|email' ,
-            'phone' => 'required|numeric',
-            'address' => 'required' ,
         ]);
 
         $user->update($req->all());
