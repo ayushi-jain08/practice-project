@@ -22,24 +22,23 @@ class AuthController extends Controller
           ]);
       
           $credentials = $request->only('email', 'password');
-          if (Auth::guard('admin')->attempt(['email'=> $request->email, 'password' => $request->password], $request->get('remember'))) {
-
+          if (Auth::guard('admin')->attempt($credentials, $request->get('remember'))) {
+            // Authentication successful
             $admin = Auth::guard('admin')->user();
-  
-            if($admin){
-                $notification = [
-                    'alert-type' => 'success',
-                    'message' => 'You have logged in successfully.',
-                ];
-                return redirect()->route('dashboard')->with($notification);
-            }else{
-                $notification = [
-                    'alert-type' => 'error',
-                    'message' => 'Invalid credentials. Please try again.',
-                ];
-                return redirect()->route('login.user')->with($notification);
-            }        
-    }
+            $notification = [
+                'alert-type' => 'success',
+                'message' => 'You have logged in successfully.'
+            ];
+            return redirect()->route('dashboard')->with($notification);
+        } else {
+            // Authentication failed
+            $notification = [
+                'alert-type' => 'error',
+                'message' => 'Invalid credentials. Please try again.',
+            ];
+            return redirect()->route('login.user')->withInput($request->except('password'))->with($notification);
+        }
+    
 }
 public function Logout () {
     Auth::guard('admin')->logout();

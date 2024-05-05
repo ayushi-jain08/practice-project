@@ -29,7 +29,7 @@
             <button type="submit">Logout</button>
         </form>
     @else
-        <a href="" class="btn btn-primary">Login</a>
+        <a href="{{ route('login.user') }}" class="btn btn-primary">Login</a>
         <a href="{{ route('register.user') }}" class="btn btn-dark">Register</a>
     @endif
 </div>
