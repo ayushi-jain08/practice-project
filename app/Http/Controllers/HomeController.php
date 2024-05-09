@@ -15,9 +15,7 @@ class HomeController extends Controller
 
         return view('frontend.home');
     }
-    public function getDashboard(){
-        $user = Auth::user();
-        
-        return view('frontend.dashboard',compact('user'));
+    public function getDashboard(){ 
+        return view('frontend.dashboard');
     }
 }

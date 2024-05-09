@@ -33,6 +33,6 @@ Route::middleware(['admin.auth'])->group(function () {
 Route::get('/task/create', [TaskController::class, 'CreateTaskPage'])->name('task.create');
 Route::post('/task/store', [TaskController::class, 'addTask'])->name('task.store');
 
-Route::put('/task/update', [TaskController::class, 'changeStatus'])->name('task.update');
+Route::put('/task/update/{id}', [TaskController::class, 'changeStatus'])->name('task.update');
 
 });
